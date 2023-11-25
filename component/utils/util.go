@@ -26,7 +26,7 @@ func GetGinEngine() *gin.Engine {
 
 func Start(s WebServer) {
 	httpServer := &http.Server{
-		Addr:                         fmt.Sprintf("0.0.0.0%d", s.GetListenPort()),
+		Addr:                         fmt.Sprintf("0.0.0.0:%d", s.GetListenPort()),
 		Handler:                      s.GetRouter(),
 		DisableGeneralOptionsHandler: false,
 		ReadHeaderTimeout:            5 * time.Second,
